@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的个人代码站</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; background: linear-gradient(135deg, #4299e1, #38b2ac); color: white; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+        .code-card { background: white; border-radius: 8px; padding: 25px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+        .code-card:hover { transform: translateY(-5px); }
+        .code-card h2 { color: #2d3748; margin-bottom: 15px; font-size: 1.5rem; border-left: 4px solid #4299e1; padding-left: 10px; }
+        .code-snippet { background: #f8f9fa; padding: 20px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', monospace; font-size: 0.95rem; color: #2d3748; }
+        footer { text-align: center; margin-top: 50px; padding: 20px; color: #718096; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 网站头部 -->
+        <header>
+            <h1>我的代码作品集</h1>
+            <p>记录 C++ / Python 学习之路</p >
+        </header>
+
+        <!-- 代码卡片1：Python 计算器 -->
+        <div class="code-card">
+            <h2>Python 简易计算器</h2>
+            <div class="code-snippet">
+<pre>
+def calculate(num1, num2, op):
+    """简单计算器函数：支持加减乘除"""
+    if op == '+':
+        return num1 + num2
+    elif op == '-':
+        return num1 - num2
+    elif op == '*':
+        return num1 * num2
+    elif op == '/':
+        return num1 / num2 if num2 != 0 else "除数不能为0"
+    else:
+        return "不支持的运算符号"
+
+# 测试案例
+print(calculate(10, 5, '+'))  # 输出：15
+print(calculate(20, 4, '/'))  # 输出：5.0
+print(calculate(7, 3, '*'))  # 输出：21
+</pre>
+            </div>
+        </div>
+
+        <!-- 代码卡片2：C++ 学生信息管理 -->
+        <div class="code-card">
+            <h2>C++ 学生信息结构体</h2>
+            <div class="code-snippet">
+<pre>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// 定义学生结构体
+struct Student {
+    string name;  // 姓名
+    int age;      // 年龄
+    float score;  // 成绩
+};
+
+int main() {
+    // 创建学生对象并赋值
+    Student stu1 = {"张三", 20, 95.5};
+    
+    // 输出学生信息
+    cout << "姓名：" << stu1.name << endl;
+    cout << "年龄：" << stu1.age << endl;
+    cout << "成绩：" << stu1.score << endl;
+    
+    return 0;
+}
+
+// 输出结果：
+// 姓名：张三
+// 年龄：20
+// 成绩：95.5
+</pre>
+            </div>
+        </div>
+
+        <!-- 代码卡片3：Python 数据可视化 -->
+        <div class="code-card">
+            <h2>Python 折线图绘制</h2>
+            <div class="code-snippet">
+<pre>
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 生成数据：x轴为月份，y轴为销量
+x = np.arange(1, 13)  # 1-12月
+y = [20, 35, 30, 45, 50, 60, 75, 70, 65, 55, 40, 30]
+
+# 设置中文显示
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 绘制折线图
+plt.plot(x, y, marker='o', color='blue', linewidth=2, markersize=6)
+plt.title('月度销量趋势图', fontsize=14)
+plt.xlabel('月份', fontsize=12)
+plt.ylabel('销量（单位：件）', fontsize=12)
+plt.xticks(x)  # x轴显示1-12
+plt.grid(True, alpha=0.3)  # 添加网格
+plt.show()
+</pre>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>© 2025 我的代码站 | 持续更新中...</p >
+        </footer>
+    </div>
+</body>
+</html>
